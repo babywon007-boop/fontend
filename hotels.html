@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>โรงแรมและที่พัก (TA1_Hotel) | บริษัท ทริป ทัวร์ เที่ยว จำกัด</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen font-body">
+
+  <!-- ==================== TOP BAR ==================== -->
+  <div class="bg-blue-950 text-white text-xs py-2 px-4 border-b border-blue-900">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="bg-rose-600 text-[10px] font-bold px-2 py-0.5 rounded tracking-wide uppercase">Table TA1_Hotel</span>
+        <span class="font-medium"><i class="fas fa-hotel text-amber-400 mr-1.5"></i> บริษัท ทริป ทัวร์ เที่ยว จำกัด | รายชื่อโรงแรมและที่พักพันธมิตร 9 แห่ง พร้อมคะแนนรีวิว</span>
+      </div>
+      <div class="flex items-center gap-4 text-blue-200 text-[11px]">
+        <a href="tables.html?tab=TA1_Hotel" class="hover:text-white flex items-center gap-1"><i class="fas fa-table"></i> ตาราง TA1_Hotel</a>
+        <span>|</span>
+        <a href="contact.html" class="hover:text-white flex items-center gap-1"><i class="fas fa-phone"></i> ติดต่อเรา</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 bg-gradient-to-tr from-rose-600 to-pink-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-rose-500/25 group-hover:scale-105 transition">
+            <i class="fas fa-plane-departure text-2xl"></i>
+          </div>
+          <div>
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 block leading-tight">
+              ทริป ทัวร์ <span class="text-rose-600">เที่ยว</span>
+            </span>
+            <span class="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wider uppercase block">
+              บริษัท ทริป ทัวร์ เที่ยว จำกัด
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-slate-600">
+          <a href="index.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            หน้าแรก
+          </a>
+          <a href="attractions.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            สถานที่ท่องเที่ยว
+          </a>
+          <a href="activities.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            กิจกรรม
+          </a>
+          <a href="hotels.html" class="nav-link active px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โรงแรมที่พัก
+          </a>
+          <a href="tables.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            จัดการฐานข้อมูล (CRUD)
+          </a>
+          <a href="about.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โครงสร้าง ER
+          </a>
+          <a href="contact.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            ติดต่อเรา
+          </a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <a href="tables.html?tab=TA1_Hotel" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+            <i class="fas fa-plus"></i> เพิ่มโรงแรม
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
+    
+    <div class="bg-gradient-to-r from-rose-900 to-pink-900 rounded-3xl p-8 text-white mb-8 shadow-lg">
+      <div class="max-w-2xl">
+        <span class="bg-rose-500/30 text-rose-200 text-xs font-mono font-bold px-3 py-1 rounded-full border border-rose-400/30 mb-3 inline-block">
+          TABLE: TA1_Hotel
+        </span>
+        <h1 class="text-2xl sm:text-4xl font-black mb-2">โรงแรมและที่พักในแต่ละจังหวัด</h1>
+        <p class="text-xs sm:text-sm text-rose-200 leading-relaxed font-light">
+          รายชื่อโรงแรม 9 แห่ง เชื่อมโยงรหัสจังหวัด (Pv_Id) พร้อมคะแนนรีวิวระดับ 3.8 - 4.5 ดาว เพื่ออำนวยความสะดวกในการท่องเที่ยว
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter & Search Bar -->
+    <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm mb-8 flex flex-wrap items-center justify-between gap-4">
+      <div class="relative w-full sm:w-80">
+        <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+        <input 
+          type="text" 
+          id="hotel-search" 
+          placeholder="ค้นหาชื่อโรงแรม หรือจังหวัด..." 
+          class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-rose-500 focus:bg-white focus:outline-none transition"
+        />
+      </div>
+
+      <div class="text-xs text-slate-500">
+        แสดงข้อมูลทั้งหมด <strong id="hotels-count" class="text-rose-600 font-bold">9 แห่ง</strong>
+      </div>
+    </div>
+
+    <!-- Hotels Cards Grid -->
+    <div id="hotels-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Injected by JS -->
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-black text-base shadow-sm">
+          <i class="fas fa-plane-departure"></i>
+        </div>
+        <div>
+          <span class="font-bold text-slate-800 block text-sm">บริษัท ทริป ทัวร์ เที่ยว จำกัด (Trip Tour Tiew Co., Ltd.)</span>
+          <span>ตารางโรงแรมและที่พัก TA1_Hotel เชื่อมโยงรหัสจังหวัด TA1_Pv</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-slate-600 font-medium">
+        <a href="index.html" class="hover:text-blue-600">หน้าแรก</a>
+        <a href="attractions.html" class="hover:text-blue-600">สถานที่เที่ยว</a>
+        <a href="activities.html" class="hover:text-blue-600">กิจกรรม</a>
+        <a href="tables.html" class="hover:text-blue-600">จัดการข้อมูล (CRUD)</a>
+        <a href="contact.html" class="hover:text-blue-600">ติดต่อเรา</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/tourist-data.js"></script>
+  <script>
+    let searchQuery = '';
+
+    function renderHotels() {
+      const container = document.getElementById('hotels-container');
+      const countEl = document.getElementById('hotels-count');
+      if (!container || !window.touristDB) return;
+
+      let list = window.touristDB.getHotelsWithProvince();
+
+      if (searchQuery) {
+        list = list.filter(item => 
+          item.Hotel_Name.toLowerCase().includes(searchQuery) ||
+          item.province.Pv_Name.toLowerCase().includes(searchQuery)
+        );
+      }
+
+      if (countEl) countEl.textContent = `${list.length} แห่ง`;
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center text-slate-400 bg-white rounded-2xl border border-slate-200">
+            <i class="fas fa-hotel text-3xl mb-2 text-slate-300 block"></i>
+            ไม่พบโรงแรมที่ค้นหา
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(item => {
+        return `
+          <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col justify-between">
+            <div class="relative h-44 overflow-hidden bg-slate-100">
+              <img src="${item.Image}" alt="${item.Hotel_Name}" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+              <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white font-mono text-[11px] font-bold px-2.5 py-1 rounded-lg">
+                Hotel_Id: ${item.Hotel_Id}
+              </div>
+              <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-amber-600 font-bold text-xs px-2.5 py-1 rounded-lg shadow-sm flex items-center gap-1">
+                <i class="fas fa-star text-amber-400"></i> ${item.Hotel_Rating} / 5.0
+              </div>
+            </div>
+
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 text-xs text-rose-600 font-bold mb-1">
+                  <i class="fas fa-location-dot"></i>
+                  <span>${item.province.Pv_Name}</span>
+                  <span class="text-slate-400 font-normal">(Pv_Id: ${item.Pv_Id})</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">${item.Hotel_Name}</h3>
+
+                <!-- Nearby attractions -->
+                <div class="bg-slate-50 p-3 rounded-xl mb-4 text-xs">
+                  <span class="text-slate-500 font-medium block mb-1">สถานที่ท่องเที่ยวในจังหวัดนี้:</span>
+                  <div class="flex flex-wrap gap-1">
+                    ${item.nearbyAttractions.length > 0 
+                      ? item.nearbyAttractions.map(a => `<span class="bg-white border border-slate-200 px-2 py-0.5 rounded text-[11px] text-slate-700">${a.Tourist_Name}</span>`).join('') 
+                      : '<span class="text-slate-400 italic text-[11px]">ไม่มีในตารางท่องเที่ยว</span>'}
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">ประมาณการ ${item.PriceEstimate || '฿1,500/คืน'}</span>
+                <a href="tables.html?tab=TA1_Hotel" class="text-rose-600 hover:text-rose-800 font-semibold flex items-center gap-1">
+                  <i class="fas fa-pen-to-square"></i> แก้ไขในตาราง
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHotels();
+      const input = document.getElementById('hotel-search');
+      if (input) {
+        input.addEventListener('input', (e) => {
+          searchQuery = e.target.value.trim().toLowerCase();
+          renderHotels();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>โครงสร้างฐานข้อมูล & ER-Diagram | บริษัท ทริป ทัวร์ เที่ยว จำกัด</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen font-body">
+
+  <!-- ==================== TOP BAR ==================== -->
+  <div class="bg-blue-950 text-white text-xs py-2 px-4 border-b border-blue-900">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="bg-blue-600 text-[10px] font-bold px-2 py-0.5 rounded tracking-wide uppercase">Documentation</span>
+        <span class="font-medium"><i class="fas fa-sitemap text-amber-400 mr-1.5"></i> บริษัท ทริป ทัวร์ เที่ยว จำกัด | เอกสารโครงสร้างฐานข้อมูล 5 ตาราง และ ER-Diagram</span>
+      </div>
+      <div class="flex items-center gap-4 text-blue-200 text-[11px]">
+        <a href="tables.html?tab=sql" class="hover:text-white flex items-center gap-1"><i class="fas fa-code"></i> คำสั่ง SQL Script</a>
+        <span>|</span>
+        <a href="contact.html" class="hover:text-white flex items-center gap-1"><i class="fas fa-phone"></i> ติดต่อเรา</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 bg-gradient-to-tr from-blue-700 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition">
+            <i class="fas fa-plane-departure text-2xl"></i>
+          </div>
+          <div>
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 block leading-tight">
+              ทริป ทัวร์ <span class="text-blue-600">เที่ยว</span>
+            </span>
+            <span class="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wider uppercase block">
+              บริษัท ทริป ทัวร์ เที่ยว จำกัด
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-slate-600">
+          <a href="index.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            หน้าแรก
+          </a>
+          <a href="attractions.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            สถานที่ท่องเที่ยว
+          </a>
+          <a href="activities.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            กิจกรรม
+          </a>
+          <a href="hotels.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โรงแรมที่พัก
+          </a>
+          <a href="tables.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            จัดการฐานข้อมูล (CRUD)
+          </a>
+          <a href="about.html" class="nav-link active px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โครงสร้าง ER
+          </a>
+          <a href="contact.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            ติดต่อเรา
+          </a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <a href="tables.html?tab=sql" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+            <i class="fas fa-terminal"></i> SQL Script
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 space-y-12">
+    
+    <!-- Hero Banner -->
+    <div class="bg-gradient-to-r from-slate-900 to-blue-950 rounded-3xl p-8 sm:p-10 text-white shadow-xl">
+      <div class="max-w-3xl">
+        <span class="bg-blue-500/20 text-blue-300 text-xs font-mono font-bold px-3 py-1 rounded-full border border-blue-400/20 mb-3 inline-block">
+          DATABASE DESIGN & ARCHITECTURE
+        </span>
+        <h1 class="text-2xl sm:text-4xl font-black mb-3">
+          โครงสร้างความสัมพันธ์ฐานข้อมูล (ER Model)
+        </h1>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+          การออกแบบฐานข้อมูลสำหรับ <strong class="text-white font-semibold">บริษัท ทริป ทัวร์ เที่ยว จำกัด</strong> เพื่อรองรับระบบสารสนเทศด้านการท่องเที่ยวไทยอย่างเป็นระบบ ประกอบด้วย 5 ตารางหลักที่มีความสัมพันธ์กันตามหลักฐานข้อมูลเชิงสัมพันธ์ (Relational Database: TA1_Pv, TA1_Tv, TA1_Tourist, TA1_Activity, TA1_Hotel)
+        </p>
+      </div>
+    </div>
+
+    <!-- Visual ER Relationship Diagram -->
+    <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm">
+      <div class="flex items-center gap-2 mb-6">
+        <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">
+          <i class="fas fa-diagram-project"></i>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-slate-900">แผนผังความสัมพันธ์ (Entity-Relationship Diagram)</h2>
+          <p class="text-xs text-slate-500">แสดง Primary Key (PK) และ Foreign Key (FK) ที่เชื่อมโยงระหว่างทั้ง 5 ตาราง</p>
+        </div>
+      </div>
+
+      <!-- Interactive visual schema boxes -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        
+        <!-- Left Column: Master Tables -->
+        <div class="space-y-6">
+          <!-- Table 1: TA1_Pv -->
+          <div class="bg-emerald-50/60 border-2 border-emerald-300 rounded-2xl p-4 shadow-sm hover:shadow transition">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-emerald-200">
+              <span class="font-bold text-xs text-emerald-900 flex items-center gap-1.5">
+                <i class="fas fa-city text-emerald-600"></i> TA1_Pv
+              </span>
+              <span class="text-[10px] bg-emerald-200 text-emerald-800 font-mono px-2 py-0.5 rounded font-bold">11 rows</span>
+            </div>
+            <ul class="text-xs space-y-1 font-mono">
+              <li class="flex items-center justify-between text-slate-800 font-bold">
+                <span>Pv_Id</span>
+                <span class="text-rose-600 text-[10px]">PK, INT</span>
+              </li>
+              <li class="flex items-center justify-between text-slate-600">
+                <span>Pv_Name</span>
+                <span class="text-slate-400 text-[10px]">VARCHAR(100)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Table 2: TA1_Tv -->
+          <div class="bg-amber-50/60 border-2 border-amber-300 rounded-2xl p-4 shadow-sm hover:shadow transition">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-amber-200">
+              <span class="font-bold text-xs text-amber-900 flex items-center gap-1.5">
+                <i class="fas fa-car text-amber-600"></i> TA1_Tv
+              </span>
+              <span class="text-[10px] bg-amber-200 text-amber-800 font-mono px-2 py-0.5 rounded font-bold">5 rows</span>
+            </div>
+            <ul class="text-xs space-y-1 font-mono">
+              <li class="flex items-center justify-between text-slate-800 font-bold">
+                <span>Tv_Id</span>
+                <span class="text-rose-600 text-[10px]">PK, INT</span>
+              </li>
+              <li class="flex items-center justify-between text-slate-600">
+                <span>Tv_Name</span>
+                <span class="text-slate-400 text-[10px]">VARCHAR(100)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Middle Column: Main Table TA1_Tourist & Hotel -->
+        <div class="space-y-6">
+          <!-- Table 3: TA1_Tourist -->
+          <div class="bg-blue-50/80 border-2 border-blue-400 rounded-2xl p-5 shadow-md hover:shadow-lg transition ring-2 ring-blue-500/20">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-blue-200">
+              <span class="font-bold text-sm text-blue-900 flex items-center gap-1.5">
+                <i class="fas fa-map-pin text-blue-600"></i> TA1_Tourist
+              </span>
+              <span class="text-[10px] bg-blue-200 text-blue-800 font-mono px-2 py-0.5 rounded font-bold">12 rows</span>
+            </div>
+            <ul class="text-xs space-y-1.5 font-mono">
+              <li class="flex items-center justify-between text-slate-900 font-bold">
+                <span>Tourist_Id</span>
+                <span class="text-rose-600 text-[10px]">PK, INT</span>
+              </li>
+              <li class="flex items-center justify-between text-slate-700">
+                <span>Tourist_Name</span>
+                <span class="text-slate-400 text-[10px]">VARCHAR(150)</span>
+              </li>
+              <li class="flex items-center justify-between text-emerald-800 font-semibold bg-emerald-100/60 px-1.5 py-0.5 rounded">
+                <span>Pv_Id</span>
+                <span class="text-emerald-700 text-[10px]">FK -> TA1_Pv</span>
+              </li>
+              <li class="flex items-center justify-between text-amber-800 font-semibold bg-amber-100/60 px-1.5 py-0.5 rounded">
+                <span>Tv_Id</span>
+                <span class="text-amber-700 text-[10px]">FK -> TA1_Tv</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Table 5: TA1_Hotel -->
+          <div class="bg-rose-50/60 border-2 border-rose-300 rounded-2xl p-4 shadow-sm hover:shadow transition">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-rose-200">
+              <span class="font-bold text-xs text-rose-900 flex items-center gap-1.5">
+                <i class="fas fa-hotel text-rose-600"></i> TA1_Hotel
+              </span>
+              <span class="text-[10px] bg-rose-200 text-rose-800 font-mono px-2 py-0.5 rounded font-bold">9 rows</span>
+            </div>
+            <ul class="text-xs space-y-1 font-mono">
+              <li class="flex items-center justify-between text-slate-800 font-bold">
+                <span>Hotel_Id</span>
+                <span class="text-rose-600 text-[10px]">PK, INT</span>
+              </li>
+              <li class="flex items-center justify-between text-slate-600">
+                <span>Hotel_Name</span>
+                <span class="text-slate-400 text-[10px]">VARCHAR(150)</span>
+              </li>
+              <li class="flex items-center justify-between text-emerald-800 font-semibold bg-emerald-100/60 px-1.5 py-0.5 rounded">
+                <span>Pv_Id</span>
+                <span class="text-emerald-700 text-[10px]">FK -> TA1_Pv</span>
+              </li>
+              <li class="flex items-center justify-between text-slate-600">
+                <span>Hotel_Rating</span>
+                <span class="text-slate-400 text-[10px]">DECIMAL(2,1)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Column: Detail Table TA1_Activity -->
+        <div>
+          <!-- Table 4: TA1_Activity -->
+          <div class="bg-purple-50/70 border-2 border-purple-300 rounded-2xl p-5 shadow-sm hover:shadow transition">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-purple-200">
+              <span class="font-bold text-xs text-purple-900 flex items-center gap-1.5">
+                <i class="fas fa-person-running text-purple-600"></i> TA1_Activity
+              </span>
+              <span class="text-[10px] bg-purple-200 text-purple-800 font-mono px-2 py-0.5 rounded font-bold">12 rows</span>
+            </div>
+            <ul class="text-xs space-y-1.5 font-mono">
+              <li class="flex items-center justify-between text-slate-900 font-bold">
+                <span>Act_Id</span>
+                <span class="text-rose-600 text-[10px]">PK, INT</span>
+              </li>
+              <li class="flex items-center justify-between text-slate-700">
+                <span>Act_Name</span>
+                <span class="text-slate-400 text-[10px]">VARCHAR(150)</span>
+              </li>
+              <li class="flex items-center justify-between text-slate-700">
+                <span>Act_Participant_Name</span>
+                <span class="text-slate-400 text-[10px]">VARCHAR(150)</span>
+              </li>
+              <li class="flex items-center justify-between text-slate-700">
+                <span>Act_Price</span>
+                <span class="text-slate-400 text-[10px]">DECIMAL(10,2)</span>
+              </li>
+              <li class="flex items-center justify-between text-blue-800 font-semibold bg-blue-100/60 px-1.5 py-0.5 rounded">
+                <span>Tourist_Id</span>
+                <span class="text-blue-700 text-[10px]">FK -> TA1_Tourist</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Relationship Explanation -->
+      <div class="mt-8 pt-6 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <div class="p-3 bg-slate-50 rounded-xl">
+          <strong class="text-blue-800 block mb-1">1. TA1_Pv ➔ TA1_Tourist</strong>
+          <p class="text-slate-600">ความสัมพันธ์แบบ 1:N (หนึ่งจังหวัดมีสถานที่ท่องเที่ยวได้หลายแห่ง)</p>
+        </div>
+        <div class="p-3 bg-slate-50 rounded-xl">
+          <strong class="text-amber-800 block mb-1">2. TA1_Tv ➔ TA1_Tourist</strong>
+          <p class="text-slate-600">ความสัมพันธ์แบบ 1:N (หนึ่งรูปแบบการเดินทางใช้เดินทางไปได้หลายสถานที่)</p>
+        </div>
+        <div class="p-3 bg-slate-50 rounded-xl">
+          <strong class="text-purple-800 block mb-1">3. TA1_Tourist ➔ TA1_Activity</strong>
+          <p class="text-slate-600">ความสัมพันธ์แบบ 1:N (หนึ่งสถานที่ท่องเที่ยวมีกิจกรรมได้หลายรายการ)</p>
+        </div>
+        <div class="p-3 bg-slate-50 rounded-xl">
+          <strong class="text-rose-800 block mb-1">4. TA1_Pv ➔ TA1_Hotel</strong>
+          <p class="text-slate-600">ความสัมพันธ์แบบ 1:N (หนึ่งจังหวัดมีโรงแรมที่พักได้หลายแห่ง)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Dictionary Tables -->
+    <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm space-y-8">
+      <div>
+        <h2 class="text-lg font-bold text-slate-900 mb-1">พจนานุกรมข้อมูล (Data Dictionary)</h2>
+        <p class="text-xs text-slate-500">คำอธิบายโครงสร้างฟิลด์ ชนิดข้อมูล และข้อกำหนดของทั้ง 5 ตาราง</p>
+      </div>
+
+      <!-- Table 1 Dict -->
+      <div>
+        <h3 class="text-sm font-bold text-slate-800 mb-2 font-mono">1. ตาราง TA1_Pv (จังหวัด)</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-slate-50 text-slate-700 font-bold">
+              <tr>
+                <th class="py-2.5 px-3 border-b">ชื่อฟิลด์</th>
+                <th class="py-2.5 px-3 border-b">ชนิดข้อมูล</th>
+                <th class="py-2.5 px-3 border-b">คีย์</th>
+                <th class="py-2.5 px-3 border-b">คำอธิบาย</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Pv_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-rose-600 font-bold">Primary Key</td>
+                <td class="py-2 px-3">รหัสระบุจังหวัด เช่น 10 (กทม.), 20 (ชลบุรี)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Pv_Name</td>
+                <td class="py-2 px-3 font-mono">VARCHAR(100)</td>
+                <td class="py-2 px-3 text-slate-400">-</td>
+                <td class="py-2 px-3">ชื่อจังหวัด เช่น กรุงเทพมหานคร, ชลบุรี, เชียงใหม่</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table 2 Dict -->
+      <div>
+        <h3 class="text-sm font-bold text-slate-800 mb-2 font-mono">2. ตาราง TA1_Tv (การเดินทาง)</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-slate-50 text-slate-700 font-bold">
+              <tr>
+                <th class="py-2.5 px-3 border-b">ชื่อฟิลด์</th>
+                <th class="py-2.5 px-3 border-b">ชนิดข้อมูล</th>
+                <th class="py-2.5 px-3 border-b">คีย์</th>
+                <th class="py-2.5 px-3 border-b">คำอธิบาย</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Tv_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-rose-600 font-bold">Primary Key</td>
+                <td class="py-2 px-3">รหัสยานพาหนะ เช่น 111 (รถยนต์), 252 (รถไฟ)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Tv_Name</td>
+                <td class="py-2 px-3 font-mono">VARCHAR(100)</td>
+                <td class="py-2 px-3 text-slate-400">-</td>
+                <td class="py-2 px-3">ประเภทการเดินทาง เช่น รถยนต์ส่วนตัว, รถทัวร์, เครื่องบิน</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table 3 Dict -->
+      <div>
+        <h3 class="text-sm font-bold text-slate-800 mb-2 font-mono">3. ตาราง TA1_Tourist (สถานที่ท่องเที่ยว)</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-slate-50 text-slate-700 font-bold">
+              <tr>
+                <th class="py-2.5 px-3 border-b">ชื่อฟิลด์</th>
+                <th class="py-2.5 px-3 border-b">ชนิดข้อมูล</th>
+                <th class="py-2.5 px-3 border-b">คีย์</th>
+                <th class="py-2.5 px-3 border-b">คำอธิบาย</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Tourist_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-rose-600 font-bold">Primary Key</td>
+                <td class="py-2 px-3">รหัสสถานที่ท่องเที่ยว (1-12)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Tourist_Name</td>
+                <td class="py-2 px-3 font-mono">VARCHAR(150)</td>
+                <td class="py-2 px-3 text-slate-400">-</td>
+                <td class="py-2 px-3">ชื่อสถานที่ท่องเที่ยว เช่น หาดบางแสน, วัดพระแก้ว</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Pv_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-emerald-600 font-bold">Foreign Key</td>
+                <td class="py-2 px-3">รหัสจังหวัด เชื่อมโยง TA1_Pv (Pv_Id)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Tv_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-amber-600 font-bold">Foreign Key</td>
+                <td class="py-2 px-3">รหัสยานพาหนะ เชื่อมโยง TA1_Tv (Tv_Id)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table 4 Dict -->
+      <div>
+        <h3 class="text-sm font-bold text-slate-800 mb-2 font-mono">4. ตาราง TA1_Activity (กิจกรรม)</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-slate-50 text-slate-700 font-bold">
+              <tr>
+                <th class="py-2.5 px-3 border-b">ชื่อฟิลด์</th>
+                <th class="py-2.5 px-3 border-b">ชนิดข้อมูล</th>
+                <th class="py-2.5 px-3 border-b">คีย์</th>
+                <th class="py-2.5 px-3 border-b">คำอธิบาย</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Act_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-rose-600 font-bold">Primary Key</td>
+                <td class="py-2 px-3">รหัสกิจกรรม (301-312)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Act_Name</td>
+                <td class="py-2 px-3 font-mono">VARCHAR(150)</td>
+                <td class="py-2 px-3 text-slate-400">-</td>
+                <td class="py-2 px-3">ชื่อกิจกรรม เช่น ดำน้ำตื้น, ปั่นจักรยานริมโขง</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Act_Participant_Name</td>
+                <td class="py-2 px-3 font-mono">VARCHAR(150)</td>
+                <td class="py-2 px-3 text-slate-400">-</td>
+                <td class="py-2 px-3">ชื่อผู้เข้าร่วมกิจกรรม หรือผู้รับผิดชอบ</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Act_Price</td>
+                <td class="py-2 px-3 font-mono">DECIMAL(10,2)</td>
+                <td class="py-2 px-3 text-slate-400">-</td>
+                <td class="py-2 px-3">ราคาค่ากิจกรรม (บาท) 0 = ฟรี</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Tourist_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-blue-600 font-bold">Foreign Key</td>
+                <td class="py-2 px-3">รหัสสถานที่ท่องเที่ยว เชื่อมโยง TA1_Tourist (Tourist_Id)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table 5 Dict -->
+      <div>
+        <h3 class="text-sm font-bold text-slate-800 mb-2 font-mono">5. ตาราง TA1_Hotel (โรงแรม/ที่พัก)</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-slate-50 text-slate-700 font-bold">
+              <tr>
+                <th class="py-2.5 px-3 border-b">ชื่อฟิลด์</th>
+                <th class="py-2.5 px-3 border-b">ชนิดข้อมูล</th>
+                <th class="py-2.5 px-3 border-b">คีย์</th>
+                <th class="py-2.5 px-3 border-b">คำอธิบาย</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Hotel_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-rose-600 font-bold">Primary Key</td>
+                <td class="py-2 px-3">รหัสโรงแรม (201-209)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Hotel_Name</td>
+                <td class="py-2 px-3 font-mono">VARCHAR(150)</td>
+                <td class="py-2 px-3 text-slate-400">-</td>
+                <td class="py-2 px-3">ชื่อโรงแรม เช่น บีชรีสอร์ทบางแสน</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Pv_Id</td>
+                <td class="py-2 px-3 font-mono">INT</td>
+                <td class="py-2 px-3 text-emerald-600 font-bold">Foreign Key</td>
+                <td class="py-2 px-3">รหัสจังหวัด เชื่อมโยง TA1_Pv (Pv_Id)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono font-bold">Hotel_Rating</td>
+                <td class="py-2 px-3 font-mono">DECIMAL(2,1)</td>
+                <td class="py-2 px-3 text-slate-400">-</td>
+                <td class="py-2 px-3">คะแนนประเมินโรงแรม (ช่วง 1.0 ถึง 5.0)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-base shadow-sm">
+          <i class="fas fa-plane-departure"></i>
+        </div>
+        <div>
+          <span class="font-bold text-slate-800 block text-sm">บริษัท ทริป ทัวร์ เที่ยว จำกัด (Trip Tour Tiew Co., Ltd.)</span>
+          <span>เอกสารความสัมพันธ์ฐานข้อมูลท่องเที่ยว 5 ตาราง: TA1_Pv, TA1_Tv, TA1_Tourist, TA1_Activity, TA1_Hotel</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-slate-600 font-medium">
+        <a href="index.html" class="hover:text-blue-600">หน้าแรก</a>
+        <a href="attractions.html" class="hover:text-blue-600">สถานที่เที่ยว</a>
+        <a href="activities.html" class="hover:text-blue-600">กิจกรรม</a>
+        <a href="hotels.html" class="hover:text-blue-600">โรงแรม</a>
+        <a href="tables.html" class="hover:text-blue-600">จัดการข้อมูล (CRUD)</a>
+        <a href="contact.html" class="hover:text-blue-600">ติดต่อเรา</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

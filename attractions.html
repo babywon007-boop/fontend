@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>สถานที่ท่องเที่ยว (TA1_Tourist) | บริษัท ทริป ทัวร์ เที่ยว จำกัด</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen font-body">
+
+  <!-- ==================== TOP BAR ==================== -->
+  <div class="bg-blue-950 text-white text-xs py-2 px-4 border-b border-blue-900">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="bg-blue-600 text-[10px] font-bold px-2 py-0.5 rounded tracking-wide uppercase">Table TA1_Tourist</span>
+        <span class="font-medium"><i class="fas fa-map-location-dot text-amber-400 mr-1.5"></i> บริษัท ทริป ทัวร์ เที่ยว จำกัด | รายการสถานที่ท่องเที่ยว 12 แห่ง เชื่อมโยงจังหวัดและยานพาหนะ</span>
+      </div>
+      <div class="flex items-center gap-4 text-blue-200 text-[11px]">
+        <a href="tables.html?tab=TA1_Tourist" class="hover:text-white flex items-center gap-1"><i class="fas fa-table"></i> ตาราง TA1_Tourist</a>
+        <span>|</span>
+        <a href="contact.html" class="hover:text-white flex items-center gap-1"><i class="fas fa-phone"></i> ติดต่อเรา</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 bg-gradient-to-tr from-blue-700 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition">
+            <i class="fas fa-plane-departure text-2xl"></i>
+          </div>
+          <div>
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 block leading-tight">
+              ทริป ทัวร์ <span class="text-blue-600">เที่ยว</span>
+            </span>
+            <span class="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wider uppercase block">
+              บริษัท ทริป ทัวร์ เที่ยว จำกัด
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-slate-600">
+          <a href="index.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            หน้าแรก
+          </a>
+          <a href="attractions.html" class="nav-link active px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            สถานที่ท่องเที่ยว
+          </a>
+          <a href="activities.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            กิจกรรม
+          </a>
+          <a href="hotels.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โรงแรมที่พัก
+          </a>
+          <a href="tables.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            จัดการฐานข้อมูล (CRUD)
+          </a>
+          <a href="about.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โครงสร้าง ER
+          </a>
+          <a href="contact.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            ติดต่อเรา
+          </a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="tables.html?tab=TA1_Tourist" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+            <i class="fas fa-plus"></i> เพิ่มสถานที่ใหม่
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
+    
+    <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-3xl p-8 text-white mb-8 shadow-lg">
+      <div class="max-w-2xl">
+        <span class="bg-blue-500/30 text-blue-200 text-xs font-mono font-bold px-3 py-1 rounded-full border border-blue-400/30 mb-3 inline-block">
+          TABLE: TA1_Tourist
+        </span>
+        <h1 class="text-2xl sm:text-4xl font-black mb-2">สถานที่ท่องเที่ยวทั่วไทย</h1>
+        <p class="text-xs sm:text-sm text-blue-200 leading-relaxed font-light">
+          สำรวจแหล่งท่องเที่ยวทางธรรมชาติ ประวัติศาสตร์ และวัฒนธรรม ทั้ง 12 แห่ง เชื่อมโยงกับรหัสจังหวัด (Pv_Id) และรหัสยานพาหนะการเดินทาง (Tv_Id)
+        </p>
+      </div>
+    </div>
+
+    <!-- Filters Bar -->
+    <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm mb-8">
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+        <div class="sm:col-span-5 relative">
+          <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="ค้นหาชื่อสถานที่ท่องเที่ยว..." 
+            class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition"
+          />
+        </div>
+        <div class="sm:col-span-3">
+          <select id="filter-province" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition text-slate-700">
+            <option value="">ทุกจังหวัด (11 จังหวัด)</option>
+          </select>
+        </div>
+        <div class="sm:col-span-3">
+          <select id="filter-vehicle" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition text-slate-700">
+            <option value="">ทุกการเดินทาง (5 ประเภท)</option>
+          </select>
+        </div>
+        <div class="sm:col-span-1">
+          <button onclick="resetFilters()" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl text-xs font-bold transition flex items-center justify-center" title="ล้างตัวกรอง">
+            <i class="fas fa-rotate-left"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attractions Grid -->
+    <div id="attractions-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Injected by JS -->
+    </div>
+
+  </main>
+
+  <!-- Attraction Detail Modal -->
+  <div id="attraction-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl animate-modal" id="modal-attraction-content">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-base shadow-sm">
+          <i class="fas fa-plane-departure"></i>
+        </div>
+        <div>
+          <span class="font-bold text-slate-800 block text-sm">บริษัท ทริป ทัวร์ เที่ยว จำกัด (Trip Tour Tiew Co., Ltd.)</span>
+          <span>ตารางสถานที่ท่องเที่ยว TA1_Tourist เชื่อมโยงกับ TA1_Pv, TA1_Tv, TA1_Activity, TA1_Hotel</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-slate-600 font-medium">
+        <a href="index.html" class="hover:text-blue-600">หน้าแรก</a>
+        <a href="activities.html" class="hover:text-blue-600">กิจกรรม</a>
+        <a href="hotels.html" class="hover:text-blue-600">โรงแรม</a>
+        <a href="tables.html" class="hover:text-blue-600">จัดการข้อมูล (CRUD)</a>
+        <a href="contact.html" class="hover:text-blue-600">ติดต่อเรา</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/tourist-data.js"></script>
+  <script src="js/tourist-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      populateFilterDropdowns();
+      renderAttractions();
+
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) searchInput.addEventListener('input', () => renderAttractions());
+
+      const pvFilter = document.getElementById('filter-province');
+      if (pvFilter) pvFilter.addEventListener('change', () => renderAttractions());
+
+      const tvFilter = document.getElementById('filter-vehicle');
+      if (tvFilter) tvFilter.addEventListener('change', () => renderAttractions());
+    });
+  </script>
+</body>
+</html>
