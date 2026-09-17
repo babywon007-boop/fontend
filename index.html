@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BOARD MASTER | ร้านจำหน่ายกระดานคุณภาพพรีเมียม ไวท์บอร์ด กระดานกระจก กระดานดำ</title>
+  <title>บริษัท ทริป ทัวร์ เที่ยว จำกัด | บริการนำเที่ยวและฐานข้อมูลท่องเที่ยวไทย 5 ตาราง</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,19 +34,21 @@
     }
   </script>
 </head>
-<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen font-body">
 
   <!-- ==================== TOP BAR ==================== -->
-  <div class="bg-brand-900 text-white text-xs py-2 px-4 border-b border-brand-800">
+  <div class="bg-blue-950 text-white text-xs py-2 px-4 border-b border-blue-900">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-      <div class="flex items-center gap-4">
-        <span><i class="fas fa-truck-fast text-amber-400 mr-1.5"></i> จัดส่งฟรีทั่วประเทศ เมื่อสั่งซื้อครบ ฿1,500</span>
-        <span class="hidden md:inline text-brand-300">|</span>
-        <span class="hidden md:inline"><i class="fas fa-shield-halved text-emerald-400 mr-1.5"></i> รับประกันสินค้าแท้ 100% มาตรฐานสากล</span>
+      <div class="flex items-center gap-3">
+        <span class="bg-blue-600 text-[10px] font-bold px-2 py-0.5 rounded tracking-wide uppercase">Official Tour & Travel</span>
+        <span class="font-medium"><i class="fas fa-compass text-amber-400 mr-1.5"></i> บริษัท ทริป ทัวร์ เที่ยว จำกัด (Trip Tour Tiew Co., Ltd.)</span>
       </div>
-      <div class="flex items-center gap-4 text-brand-200">
-        <a href="tel:028889999" class="hover:text-white flex items-center gap-1.5"><i class="fas fa-phone"></i> 02-888-9999</a>
-        <a href="https://line.me" target="_blank" class="hover:text-white flex items-center gap-1.5"><i class="fab fa-line text-emerald-400"></i> LINE: @boardmaster</a>
+      <div class="flex items-center gap-4 text-blue-200 text-[11px]">
+        <a href="tables.html?tab=sql" class="hover:text-white flex items-center gap-1"><i class="fas fa-code"></i> คำสั่ง SQL Script</a>
+        <span>|</span>
+        <a href="about.html" class="hover:text-white flex items-center gap-1"><i class="fas fa-sitemap"></i> แผนภาพ ER-Diagram</a>
+        <span>|</span>
+        <a href="contact.html" class="hover:text-white flex items-center gap-1"><i class="fas fa-phone"></i> ติดต่อเรา</a>
       </div>
     </div>
   </div>
@@ -56,286 +58,325 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- โลโก้ร้าน (Logo) -->
+        <!-- Logo -->
         <a href="index.html" class="flex items-center gap-3 group">
-          <div class="w-12 h-12 bg-gradient-to-tr from-brand-700 to-brand-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition">
-            <i class="fas fa-chalkboard text-2xl"></i>
+          <div class="w-12 h-12 bg-gradient-to-tr from-blue-700 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition">
+            <i class="fas fa-plane-departure text-2xl"></i>
           </div>
           <div>
             <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 block leading-tight">
-              BOARD<span class="text-brand-600">MASTER</span>
+              ทริป ทัวร์ <span class="text-blue-600">เที่ยว</span>
             </span>
-            <span class="text-[10px] sm:text-xs text-slate-500 font-medium tracking-wider uppercase block">
-              กระดานคุณภาพ & บอร์ดเพื่อการศึกษา
+            <span class="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wider uppercase block">
+              บริษัท ทริป ทัวร์ เที่ยว จำกัด
             </span>
           </div>
         </a>
 
-        <!-- เมนูนำทางหลัก (Main Navigation Links) -->
+        <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-slate-600">
-          <a href="index.html" class="nav-link active px-4 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">
+          <a href="index.html" class="nav-link active px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
             หน้าแรก
           </a>
-          <a href="products.html" class="nav-link px-4 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">
-            สินค้า
+          <a href="attractions.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            สถานที่ท่องเที่ยว
           </a>
-          <a href="checkout.html" class="nav-link px-4 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">
-            ชำระเงิน
+          <a href="activities.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            กิจกรรม
           </a>
-          <a href="about.html" class="nav-link px-4 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">
-            เกี่ยวกับเรา
+          <a href="hotels.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โรงแรมที่พัก
           </a>
-          <a href="contact.html" class="nav-link px-4 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">
-            ติดต่อ
+          <a href="tables.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            จัดการฐานข้อมูล (CRUD)
+          </a>
+          <a href="about.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โครงสร้าง ER
+          </a>
+          <a href="contact.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            ติดต่อเรา
           </a>
         </nav>
 
-        <!-- ไอคอนการใช้งาน (Search, User, Cart) -->
+        <!-- Right Quick Actions -->
         <div class="flex items-center gap-2 sm:gap-3">
-          <!-- ไอคอนค้นหา (Search) -->
-          <button onclick="toggleSearchModal(true)" class="p-2.5 sm:p-3 text-slate-600 hover:text-brand-600 hover:bg-slate-100 rounded-xl transition" title="ค้นหาสินค้า">
-            <i class="fas fa-magnifying-glass text-lg"></i>
-          </button>
-
-          <!-- ไอคอนผู้ใช้ (User) -->
-          <button onclick="toggleUserModal(true)" class="p-2.5 sm:p-3 text-slate-600 hover:text-brand-600 hover:bg-slate-100 rounded-xl transition" title="บัญชีผู้ใช้">
-            <i class="fas fa-user text-lg"></i>
-          </button>
-
-          <!-- ไอคอนตะกร้าสินค้า (Cart) -->
-          <button onclick="toggleCartDrawer(true)" class="relative p-2.5 sm:p-3 bg-brand-50 text-brand-600 hover:bg-brand-600 hover:text-white rounded-xl transition shadow-sm" title="ตะกร้าสินค้า">
-            <i class="fas fa-bag-shopping text-lg"></i>
-            <span class="cart-badge-count hidden absolute -top-1.5 -right-1.5 bg-amber-500 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">
-              0
-            </span>
-          </button>
-
-          <!-- Mobile Hamburger Toggle -->
-          <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 text-slate-600 hover:text-brand-600 hover:bg-slate-100 rounded-xl transition">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
+          <a href="tables.html" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-md shadow-blue-500/20 hover:shadow-lg transition flex items-center gap-2">
+            <i class="fas fa-table-columns"></i>
+            <span class="hidden sm:inline">จัดการข้อมูล</span> 5 ตาราง
+          </a>
         </div>
-
       </div>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-5 space-y-1 shadow-lg">
-      <a href="index.html" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-brand-600 bg-brand-50">หน้าแรก</a>
-      <a href="products.html" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">สินค้า</a>
-      <a href="checkout.html" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">ชำระเงิน</a>
-      <a href="about.html" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">เกี่ยวกับเรา</a>
-      <a href="contact.html" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">ติดต่อ</a>
     </div>
   </header>
 
-  <!-- ==================== MAIN CONTENT (PAGE 1: HOME) ==================== -->
-  <main class="flex-grow">
-    
-    <!-- 1. HERO SECTION (ข้อมูลแนะนำร้าน & ปุ่มดูสินค้าทั้งหมด) -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-brand-50/70 via-white to-slate-50 py-16 lg:py-24 border-b border-slate-200/60">
-      <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-200/40 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-gradient text-white py-14 sm:py-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 -top-20 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <!-- ข้อความแนะนำร้าน (Store Intro) -->
-          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 text-brand-800 text-xs font-bold tracking-wide uppercase">
-              <i class="fas fa-award text-amber-500"></i> อันดับ 1 ด้านกระดานและไวท์บอร์ดมาตรฐานสากล
-            </div>
-
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
-              สร้างสรรค์ทุกไอเดีย<br />
-              ด้วยกระดานคุณภาพ <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">เขียนลื่น ลบง่าย</span>
-            </h1>
-
-            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-body">
-              <strong>BOARD MASTER</strong> ผู้เชี่ยวชาญด้านกระดานไวท์บอร์ดแม่เหล็ก กระดานกระจกนิรภัย กระดานดำวินเทจ และบอร์ดติดประกาศสำหรับสำนักงาน โรงเรียน มหาวิทยาลัย และใช้งานที่บ้าน ผลิตจากวัสดุพรีเมียม สวยงาม ทนทาน พร้อมบริการจัดส่งทั่วประเทศ
-            </p>
-
-            <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="products.html" class="inline-flex items-center gap-3 bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 hover:scale-105 transition text-base">
-                <span>ดูสินค้าทั้งหมด</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-              <a href="about.html" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 font-semibold px-6 py-4 rounded-xl border border-slate-200 transition text-base">
-                <i class="fas fa-circle-info text-slate-400"></i>
-                <span>ทำความรู้จักเรา</span>
-              </a>
-            </div>
-
-            <!-- Stats Bar -->
-            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 max-w-lg mx-auto lg:mx-0">
-              <div>
-                <span class="block text-2xl font-black text-slate-900">15+ ปี</span>
-                <span class="text-xs text-slate-500 font-medium">ประสบการณ์ผลิต</span>
-              </div>
-              <div>
-                <span class="block text-2xl font-black text-slate-900">20,000+</span>
-                <span class="text-xs text-slate-500 font-medium">ลูกค้าไว้วางใจ</span>
-              </div>
-              <div>
-                <span class="block text-2xl font-black text-slate-900">100%</span>
-                <span class="text-xs text-slate-500 font-medium">รับประกันคุณภาพ</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hero Image Showcase -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative mx-auto max-w-md lg:max-w-none">
-              <!-- Main Image -->
-              <div class="overflow-hidden rounded-3xl shadow-2xl border-4 border-white bg-slate-100 relative group">
-                <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1000&q=80" alt="กระดานไวท์บอร์ดคุณภาพสูง" class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-700" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-6 right-6 text-white">
-                  <span class="bg-amber-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-md mb-2 inline-block">พรีเมียมเกรด A</span>
-                  <h3 class="text-lg font-bold">กระดานไวท์บอร์ดแม่เหล็กขอบอะลูมิเนียม</h3>
-                  <p class="text-xs text-slate-200 mt-1">เขียนลื่น ลบสะอาด ไร้คราบฝังลึก</p>
-                </div>
-              </div>
-
-              <!-- Floating Tag 1 -->
-              <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-pulse-subtle">
-                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl">
-                  <i class="fas fa-truck-fast"></i>
-                </div>
-                <div>
-                  <span class="text-xs text-slate-500 font-medium block">จัดส่งด่วน</span>
-                  <span class="text-sm font-bold text-slate-900">ส่งทั่วไทย 1-3 วัน</span>
-                </div>
-              </div>
-
-              <!-- Floating Tag 2 -->
-              <div class="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
-                <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl">
-                  <i class="fas fa-star"></i>
-                </div>
-                <div>
-                  <span class="text-xs text-slate-500 font-medium block">คะแนนรีวิว</span>
-                  <span class="text-sm font-bold text-slate-900">4.9 / 5.0 (500+ รีวิว)</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl text-center mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-200 text-xs font-semibold mb-4">
+          <i class="fas fa-sparkles text-amber-400"></i> บริษัท ทริป ทัวร์ เที่ยว จำกัด • ระบบจัดการฐานข้อมูลท่องเที่ยว 5 ตาราง
         </div>
-      </div>
-    </section>
-
-    <!-- 2. จุดเด่นของร้าน (KEY HIGHLIGHTS: สินค้าคุณภาพดี, เขียนลื่น, จัดส่งทั่วประเทศ, รับประกันสินค้า) -->
-    <section class="py-16 bg-white border-b border-slate-200/80">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-xs font-bold text-brand-600 bg-brand-50 px-3.5 py-1.5 rounded-full uppercase tracking-wider">
-            ทำไมต้องเลือกเรา
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-4">
+          เปิดประสบการณ์ท่องเที่ยวทั่วไทย<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-white">
+            บริษัท ทริป ทัวร์ เที่ยว จำกัด
           </span>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 mt-3">
-            จุดเด่นที่ทำให้เราเป็นอันดับ 1 เรื่องกระดาน
-          </h2>
-          <p class="text-sm sm:text-base text-slate-500 mt-2 font-body">
-            เราคัดสรรวัสดุที่ดีที่สุด ใส่ใจในทุกขั้นตอนการผลิต เพื่อให้คุณได้รับกระดานที่คุ้มค่าและใช้งานได้ยาวนานที่สุด
-          </p>
-        </div>
+        </h1>
+        <p class="text-sm sm:text-base text-blue-100/90 font-light leading-relaxed">
+          บริการจัดนำเที่ยว กิจกรรมสุดประทับใจ และที่พักชั้นนำ เชื่อมโยงข้อมูลผ่านโครงสร้างฐานข้อมูลเชิงสัมพันธ์ 5 ตาราง: สถานที่ท่องเที่ยว (TA1_Tourist), จังหวัด (TA1_Pv), การเดินทาง (TA1_Tv), กิจกรรม (TA1_Activity) และโรงแรมที่พัก (TA1_Hotel)
+        </p>
+      </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Search & Filter Bar Card -->
+      <div class="bg-white/95 backdrop-blur-xl p-4 sm:p-5 rounded-2xl shadow-2xl border border-white/40 max-w-4xl mx-auto text-slate-800">
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
           
-          <!-- จุดเด่น 1: สินค้าคุณภาพดี -->
-          <div class="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-brand-500/30 hover:shadow-xl transition group">
-            <div class="w-14 h-14 bg-blue-100 text-brand-600 group-hover:bg-brand-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl mb-5 transition shadow-sm">
-              <i class="fas fa-medal"></i>
+          <!-- Search input -->
+          <div class="sm:col-span-5 relative">
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">ค้นหาชื่อสถานที่ / กิจกรรม</label>
+            <div class="relative">
+              <i class="fas fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+              <input 
+                type="text" 
+                id="search-input" 
+                placeholder="เช่น บางแสน, วัดพระแก้ว, ดำน้ำ..." 
+                class="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition font-medium"
+              />
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">สินค้าคุณภาพดี</h3>
-            <p class="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
-              ผลิตจากแผ่นเหล็กเคลือบผิวเกรดนำเข้า และอะลูมิเนียมชุบ Anodize แข็งแรง ทนทาน ไม่บิดงอง่าย ใช้งานได้ยาวนานหลายปี
-            </p>
           </div>
 
-          <!-- จุดเด่น 2: เขียนลื่น ลบง่าย -->
-          <div class="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-brand-500/30 hover:shadow-xl transition group">
-            <div class="w-14 h-14 bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl mb-5 transition shadow-sm">
-              <i class="fas fa-pen-nib"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">เขียนลื่น ลบง่าย</h3>
-            <p class="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
-              พื้นผิว High-Gloss แบบ Nano-Coating ให้สัมผัสการเขียนที่ลื่นไหล หมึกคมชัด และลบออกได้อย่างง่ายดาย ไม่ทิ้งคราบหมึกฝังลึก
-            </p>
+          <!-- Province filter -->
+          <div class="sm:col-span-3">
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">จังหวัด (TA1_Pv)</label>
+            <select 
+              id="filter-province" 
+              class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition font-medium text-slate-700">
+              <option value="">ทุกจังหวัด (11 จังหวัด)</option>
+            </select>
           </div>
 
-          <!-- จุดเด่น 3: จัดส่งทั่วประเทศ -->
-          <div class="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-brand-500/30 hover:shadow-xl transition group">
-            <div class="w-14 h-14 bg-amber-100 text-amber-600 group-hover:bg-amber-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl mb-5 transition shadow-sm">
-              <i class="fas fa-truck-ramp-box"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">จัดส่งทั่วประเทศ</h3>
-            <p class="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
-              แพ็กกิ้งแน่นหนาด้วยโครงไม้กันกระแทกพิเศษ ส่งตรงถึงสำนักงาน สถาบันการศึกษา และบ้านทั่วประเทศไทย รวดเร็ว ปลอดภัย 100%
-            </p>
+          <!-- Vehicle filter -->
+          <div class="sm:col-span-3">
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">การเดินทาง (TA1_Tv)</label>
+            <select 
+              id="filter-vehicle" 
+              class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition font-medium text-slate-700">
+              <option value="">ทุกยานพาหนะ (5 ประเภท)</option>
+            </select>
           </div>
 
-          <!-- จุดเด่น 4: รับประกันสินค้า -->
-          <div class="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-brand-500/30 hover:shadow-xl transition group">
-            <div class="w-14 h-14 bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl mb-5 transition shadow-sm">
-              <i class="fas fa-shield-heart"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">รับประกันสินค้า</h3>
-            <p class="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
-              มั่นใจด้วยการรับประกันพื้นผิวและโครงสร้างกระดาน หากพบปัญหาจากการผลิตหรือการขนส่ง เรายินดีเปลี่ยนสินค้าชิ้นใหม่ให้ทันที
-            </p>
+          <!-- Reset Filter Button -->
+          <div class="sm:col-span-1 flex items-end">
+            <button 
+              onclick="resetFilters()" 
+              title="ล้างตัวกรอง"
+              class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl text-xs font-bold transition flex items-center justify-center">
+              <i class="fas fa-rotate-left"></i>
+            </button>
           </div>
 
         </div>
-
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 3. สินค้าขายดีแนะนำ (FEATURED PRODUCTS PREVIEW) -->
-    <section class="py-16 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ==================== DASHBOARD METRICS BAR ==================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-7 relative z-20">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      
+      <!-- Card 1: Attractions -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex items-center gap-3.5 hover:border-blue-300 transition">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fas fa-map-location-dot"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-black text-slate-900 leading-tight block" id="stat-tourist">12</span>
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">สถานที่ท่องเที่ยว</span>
+          <span class="text-[10px] text-blue-600 font-mono">TA1_Tourist</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Provinces -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex items-center gap-3.5 hover:border-emerald-300 transition">
+        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fas fa-city"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-black text-slate-900 leading-tight block" id="stat-pv">11</span>
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">จังหวัดในระบบ</span>
+          <span class="text-[10px] text-emerald-600 font-mono">TA1_Pv</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Vehicles -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex items-center gap-3.5 hover:border-amber-300 transition">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fas fa-van-shuttle"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-black text-slate-900 leading-tight block" id="stat-tv">5</span>
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">รูปแบบการเดินทาง</span>
+          <span class="text-[10px] text-amber-600 font-mono">TA1_Tv</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Activities -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex items-center gap-3.5 hover:border-purple-300 transition">
+        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fas fa-person-snowboarding"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-black text-slate-900 leading-tight block" id="stat-act">12</span>
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">กิจกรรมท่องเที่ยว</span>
+          <span class="text-[10px] text-purple-600 font-mono">TA1_Activity</span>
+        </div>
+      </div>
+
+      <!-- Card 5: Hotels -->
+      <div class="col-span-2 sm:col-span-1 bg-white rounded-2xl p-4 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex items-center gap-3.5 hover:border-rose-300 transition">
+        <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fas fa-hotel"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-black text-slate-900 leading-tight block" id="stat-hotel">9</span>
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">โรงแรมและที่พัก</span>
+          <span class="text-[10px] text-rose-600 font-mono">TA1_Hotel</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MAIN CONTENT: ATTRACTIONS GRID ==================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
+    
+    <!-- Section Title & Filter Info -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">ข้อมูลเชื่อมโยงสถานที่ท่องเที่ยว</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+          สำรวจสถานที่ท่องเที่ยวไทย (12 แห่ง)
+        </h2>
+      </div>
+      <div class="flex items-center gap-3">
+        <span id="attractions-count" class="text-xs font-bold bg-blue-100 text-blue-800 px-3 py-1.5 rounded-xl">
+          พบ 12 แห่ง
+        </span>
+        <a href="tables.html?tab=TA1_Tourist" class="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1">
+          เปิดดูในตารางดิบ <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div id="attractions-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Generated via js/tourist-app.js -->
+    </div>
+
+    <!-- Trip Planner Section -->
+    <section class="mt-16 bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-          <div>
-            <span class="text-xs font-bold text-brand-600 bg-brand-100 px-3.5 py-1.5 rounded-full uppercase tracking-wider">
-              สินค้าแนะนำ
-            </span>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
-              กระดานรุ่นยอดนิยม ขายดีตลอดกาล
-            </h2>
+        <div class="lg:col-span-5">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold mb-3">
+            <i class="fas fa-calculator"></i> คำนวณงบประมาณ
           </div>
-          <a href="products.html" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-700 bg-white px-5 py-2.5 rounded-xl border border-slate-200 shadow-sm hover:shadow transition">
-            <span>ดูสินค้าทั้งหมดในร้าน</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
+          <h3 class="text-2xl font-black text-slate-900 tracking-tight mb-2">
+            วางแผนทริปและคำนวณค่าใช้จ่าย
+          </h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-body mb-6">
+            จำลองการวางแผนท่องเที่ยว โดยเลือกสถานที่ที่คุณสนใจ ระบบจะคำนวณค่ากิจกรรมตามตาราง <code class="font-mono text-blue-600 font-bold">TA1_Activity</code> ให้โดยอัตโนมัติ
+          </p>
+
+          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-2xl p-5 text-white">
+            <span class="text-xs text-blue-200 block mb-1">งบประมาณค่ากิจกรรมรวมทั้งหมด</span>
+            <div class="text-3xl sm:text-4xl font-black text-amber-300 mb-4" id="trip-plan-total">
+              ฿0
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-white/10 text-xs">
+              <span class="text-blue-200" id="trip-plan-count">0 จุดหมาย</span>
+              <button onclick="clearTripPlan()" class="text-rose-300 hover:text-white transition font-medium">
+                <i class="fas fa-trash-can mr-1"></i> ล้างรายการทั้งหมด
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div id="homeFeaturedProducts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Populated by JavaScript -->
+        <div class="lg:col-span-7">
+          <h4 class="text-sm font-bold text-slate-800 mb-3 flex items-center justify-between">
+            <span>รายการสถานที่ที่เลือก</span>
+            <span class="text-xs font-normal text-slate-500">คลิกปุ่ม <i class="fas fa-bookmark text-blue-600"></i> บนการ์ดเพื่อเพิ่ม</span>
+          </h4>
+          
+          <div id="trip-plan-items" class="space-y-2.5 max-h-80 overflow-y-auto pr-1">
+            <!-- Rendered by JS -->
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- 4. แบนเนอร์เชิญชวนสั่งผลิตตามขนาดพิเศษ (CUSTOM BANNER) -->
-    <section class="py-14 bg-gradient-to-r from-brand-900 via-brand-800 to-indigo-900 text-white relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div class="space-y-3 text-center lg:text-left">
-          <span class="bg-amber-400 text-brand-950 text-xs font-bold px-3 py-1 rounded-full uppercase">Custom Made</span>
-          <h2 class="text-2xl sm:text-3xl font-black">ต้องการกระดานสั่งทำตามขนาด หรือติดโลโก้องค์กร?</h2>
-          <p class="text-brand-200 text-sm max-w-xl font-body">
-            เรารับผลิตกระดานไวท์บอร์ด บอร์ดกระจก และกระดานติดประกาศตามขนาดพื้นที่จริง พร้อมบริการสกรีนลายตาราง แผนงาน และโลโก้บริษัท
+    <!-- Database Schema 5 Tables Quick Nav Banner -->
+    <section class="mt-16 bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
+      <div class="relative z-10">
+        <div class="max-w-2xl mb-8">
+          <span class="bg-blue-600/30 text-blue-300 text-xs font-mono font-bold px-3 py-1 rounded-full border border-blue-500/30 mb-3 inline-block">
+            RELATIONAL DATABASE STRUCTURE
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-black tracking-tight mb-2">
+            ระบบจัดการและตรวจสอบฐานข้อมูล 5 ตาราง
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 font-light">
+            เข้าถึงข้อมูลทั้ง 5 ตารางพร้อมระบบ เพิ่ม ลบ แก้ไข (CRUD), ดูความสัมพันธ์แบบ Relational JOIN และคัดลอกคำสั่ง SQL สำหรับส่งงานได้ทันที
           </p>
         </div>
-        <div class="flex items-center gap-4 flex-shrink-0">
-          <a href="contact.html" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-7 py-3.5 rounded-xl shadow-lg hover:scale-105 transition text-sm">
-            <i class="fas fa-comments mr-2"></i> ติดต่อประเมินราคาฟรี
+
+        <!-- 5 Tables Quick Links -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-8">
+          <a href="tables.html?tab=TA1_Tourist" class="bg-slate-800/80 hover:bg-blue-600 p-4 rounded-2xl border border-slate-700 hover:border-blue-500 transition group">
+            <span class="text-xs font-mono text-blue-400 group-hover:text-white block font-bold">ตารางที่ 1</span>
+            <h4 class="font-bold text-sm text-white mt-1">TA1_Tourist</h4>
+            <span class="text-[11px] text-slate-400 group-hover:text-blue-100 block mt-1">สถานที่ท่องเที่ยว (12)</span>
           </a>
-          <a href="tel:028889999" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3.5 rounded-xl border border-white/20 transition text-sm">
-            <i class="fas fa-phone mr-1.5"></i> 02-888-9999
+
+          <a href="tables.html?tab=TA1_Activity" class="bg-slate-800/80 hover:bg-blue-600 p-4 rounded-2xl border border-slate-700 hover:border-blue-500 transition group">
+            <span class="text-xs font-mono text-purple-400 group-hover:text-white block font-bold">ตารางที่ 2</span>
+            <h4 class="font-bold text-sm text-white mt-1">TA1_Activity</h4>
+            <span class="text-[11px] text-slate-400 group-hover:text-blue-100 block mt-1">กิจกรรมท่องเที่ยว (12)</span>
+          </a>
+
+          <a href="tables.html?tab=TA1_Hotel" class="bg-slate-800/80 hover:bg-blue-600 p-4 rounded-2xl border border-slate-700 hover:border-blue-500 transition group">
+            <span class="text-xs font-mono text-rose-400 group-hover:text-white block font-bold">ตารางที่ 3</span>
+            <h4 class="font-bold text-sm text-white mt-1">TA1_Hotel</h4>
+            <span class="text-[11px] text-slate-400 group-hover:text-blue-100 block mt-1">โรงแรมที่พัก (9)</span>
+          </a>
+
+          <a href="tables.html?tab=TA1_Pv" class="bg-slate-800/80 hover:bg-blue-600 p-4 rounded-2xl border border-slate-700 hover:border-blue-500 transition group">
+            <span class="text-xs font-mono text-emerald-400 group-hover:text-white block font-bold">ตารางที่ 4</span>
+            <h4 class="font-bold text-sm text-white mt-1">TA1_Pv</h4>
+            <span class="text-[11px] text-slate-400 group-hover:text-blue-100 block mt-1">จังหวัด (11)</span>
+          </a>
+
+          <a href="tables.html?tab=TA1_Tv" class="bg-slate-800/80 hover:bg-blue-600 p-4 rounded-2xl border border-slate-700 hover:border-blue-500 transition group">
+            <span class="text-xs font-mono text-amber-400 group-hover:text-white block font-bold">ตารางที่ 5</span>
+            <h4 class="font-bold text-sm text-white mt-1">TA1_Tv</h4>
+            <span class="text-[11px] text-slate-400 group-hover:text-blue-100 block mt-1">การเดินทาง (5)</span>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="tables.html?tab=relational" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+            <i class="fas fa-diagram-project"></i> ดูการเชื่อมโยงความสัมพันธ์ (Joined View)
+          </a>
+          <a href="tables.html?tab=sql" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-700">
+            <i class="fas fa-terminal text-emerald-400"></i> ดูคำสั่ง SQL CREATE/INSERT
           </a>
         </div>
       </div>
@@ -343,287 +384,43 @@
 
   </main>
 
-  <!-- ==================== GLOBAL FOOTER ==================== -->
-  <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
-        
-        <!-- ข้อมูลร้านค้า -->
-        <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-              <i class="fas fa-chalkboard"></i>
-            </div>
-            <span class="text-xl font-black text-white tracking-tight">BOARD<span class="text-brand-400">MASTER</span></span>
-          </div>
-          <p class="text-xs text-slate-400 font-body leading-relaxed pr-6">
-            ศูนย์รวมกระดานคุณภาพพรีเมียมทุกประเภท ไวท์บอร์ดแขวนผนัง ไวท์บอร์ดล้อเลื่อน กระดานกระจกนิรภัย กระดานดำคาเฟ่ และบอร์ดติดประกาศ มุ่งมั่นส่งมอบสินค้ามาตรฐานสากลเพื่อการเรียนรู้และการทำงานที่มีประสิทธิภาพ
-          </p>
-          <div class="flex items-center gap-3 pt-2">
-            <a href="https://facebook.com" target="_blank" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fab fa-facebook-f text-sm"></i></a>
-            <a href="https://line.me" target="_blank" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-600 text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fab fa-line text-sm"></i></a>
-            <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-pink-600 text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fab fa-instagram text-sm"></i></a>
-            <a href="https://tiktok.com" target="_blank" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fab fa-tiktok text-sm"></i></a>
-          </div>
-        </div>
+  <!-- ==================== ATTRACTION DETAIL MODAL ==================== -->
+  <div id="attraction-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl animate-modal" id="modal-attraction-content">
+      <!-- Injected by JS -->
+    </div>
+  </div>
 
-        <!-- ลิงก์นำทางด่วน -->
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-base shadow-sm">
+          <i class="fas fa-plane-departure"></i>
+        </div>
         <div>
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">เมนูนำทาง</h4>
-          <ul class="space-y-2.5 text-xs text-slate-400">
-            <li><a href="index.html" class="hover:text-brand-400 transition">หน้าแรก</a></li>
-            <li><a href="products.html" class="hover:text-brand-400 transition">สินค้าทั้งหมด</a></li>
-            <li><a href="checkout.html" class="hover:text-brand-400 transition">ชำระเงิน / ตะกร้า</a></li>
-            <li><a href="about.html" class="hover:text-brand-400 transition">เกี่ยวกับเรา</a></li>
-            <li><a href="contact.html" class="hover:text-brand-400 transition">ติดต่อเรา</a></li>
-          </ul>
+          <span class="font-bold text-slate-800 block text-sm">บริษัท ทริป ทัวร์ เที่ยว จำกัด (Trip Tour Tiew Co., Ltd.)</span>
+          <span>บริการจัดนำเที่ยวและแพ็กเกจทัวร์ทั่วไทย บูรณาการฐานข้อมูล 5 ตาราง: TA1_Pv, TA1_Tv, TA1_Tourist, TA1_Activity, TA1_Hotel</span>
         </div>
-
-        <!-- หมวดหมู่สินค้า -->
-        <div>
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">ประเภทกระดาน</h4>
-          <ul class="space-y-2.5 text-xs text-slate-400">
-            <li><a href="products.html" class="hover:text-brand-400 transition">กระดานไวท์บอร์ดแขวน</a></li>
-            <li><a href="products.html" class="hover:text-brand-400 transition">กระดานขาตั้งล้อเลื่อน</a></li>
-            <li><a href="products.html" class="hover:text-brand-400 transition">กระดานกระจกนิรภัย</a></li>
-            <li><a href="products.html" class="hover:text-brand-400 transition">กระดานดำวินเทจ</a></li>
-            <li><a href="products.html" class="hover:text-brand-400 transition">บอร์ดไม้คอร์กติดประกาศ</a></li>
-          </ul>
-        </div>
-
-        <!-- ข้อมูลติดต่อด่วน -->
-        <div>
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">ติดต่อเรา</h4>
-          <ul class="space-y-3 text-xs text-slate-400 font-body">
-            <li class="flex items-start gap-2.5">
-              <i class="fas fa-phone text-brand-400 mt-0.5"></i>
-              <span>02-888-9999, 089-123-4567</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i class="fas fa-envelope text-brand-400 mt-0.5"></i>
-              <span>contact@boardmaster.co.th</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i class="fas fa-clock text-brand-400 mt-0.5"></i>
-              <span>จันทร์ - เสาร์: 08:30 - 18:00 น.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i class="fas fa-location-dot text-brand-400 mt-0.5"></i>
-              <span>กรุงเทพมหานคร ประเทศไทย</span>
-            </li>
-          </ul>
-        </div>
-
       </div>
-
-      <!-- Copyright -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© 2026 BOARD MASTER Co., Ltd. สงวนลิขสิทธิ์ทุกประการ</p>
-        <p>พัฒนาด้วยความใส่ใจเพื่อกระดานคุณภาพสูงสุด</p>
+      <div class="flex items-center gap-4 text-slate-600 font-medium">
+        <a href="attractions.html" class="hover:text-blue-600">สถานที่เที่ยว</a>
+        <a href="activities.html" class="hover:text-blue-600">กิจกรรม</a>
+        <a href="hotels.html" class="hover:text-blue-600">โรงแรม</a>
+        <a href="tables.html" class="hover:text-blue-600">จัดการข้อมูล (CRUD)</a>
+        <a href="about.html" class="hover:text-blue-600">ER-Diagram</a>
+        <a href="contact.html" class="hover:text-blue-600">ติดต่อเรา</a>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== GLOBAL MODALS & DRAWERS ==================== -->
-
-  <!-- 1. CART SLIDE-OVER DRAWER -->
-  <div id="cartDrawerOverlay" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-slate-900/60 z-50 transition-opacity duration-300 opacity-0 pointer-events-none backdrop-blur-sm"></div>
-  <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-    <!-- Header -->
-    <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-      <div class="flex items-center gap-2">
-        <i class="fas fa-bag-shopping text-brand-600 text-lg"></i>
-        <h3 class="font-bold text-slate-900 text-base">ตะกร้าสินค้าของคุณ</h3>
-      </div>
-      <button onclick="toggleCartDrawer(false)" class="p-2 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-200/60 transition">
-        <i class="fas fa-times text-base"></i>
-      </button>
-    </div>
-
-    <!-- Items List -->
-    <div id="drawerCartItems" class="flex-1 overflow-y-auto p-4 space-y-3">
-      <!-- Generated by CartManager -->
-    </div>
-
-    <!-- Empty State -->
-    <div id="drawerCartEmpty" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
-      <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-2xl mb-4">
-        <i class="fas fa-cart-arrow-down"></i>
-      </div>
-      <h4 class="font-bold text-slate-700 text-sm">ยังไม่มีสินค้าในตะกร้า</h4>
-      <p class="text-xs text-slate-400 mt-1 max-w-xs">เลือกชมกระดานคุณภาพดีรุ่นต่างๆ แล้วเพิ่มลงตะกร้าได้เลย</p>
-      <a href="products.html" onclick="toggleCartDrawer(false)" class="mt-4 bg-brand-600 text-white text-xs font-bold px-5 py-2.5 rounded-xl hover:bg-brand-700 transition">
-        เลือกซื้อสินค้า
-      </a>
-    </div>
-
-    <!-- Footer Summary -->
-    <div id="drawerCartFooter" class="p-5 border-t border-slate-200 bg-slate-50 space-y-3">
-      <div class="flex items-center justify-between text-sm">
-        <span class="text-slate-600 font-medium">ยอดรวมสินค้า:</span>
-        <span id="drawerCartSubtotal" class="font-bold text-slate-900 text-base">฿0</span>
-      </div>
-      <p class="text-[11px] text-slate-500"><i class="fas fa-info-circle text-brand-500"></i> จัดส่งฟรีเมื่อสั่งซื้อครบ ฿1,500</p>
-      <a href="checkout.html" class="block w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 rounded-xl text-center shadow-lg shadow-brand-500/25 transition text-sm">
-        ไปที่หน้าชำระเงิน <i class="fas fa-arrow-right ml-1"></i>
-      </a>
-    </div>
-  </aside>
-
-  <!-- 2. SEARCH MODAL -->
-  <div id="searchModal" class="hidden fixed inset-0 z-50 modal-overlay flex items-start justify-center pt-20 px-4">
-    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden animate-fade-in border border-slate-200">
-      <div class="p-4 border-b border-slate-200 flex items-center gap-3">
-        <i class="fas fa-search text-slate-400 text-lg"></i>
-        <input type="text" id="globalSearchInput" oninput="handleGlobalSearch(this.value)" placeholder="ค้นหากระดาน เช่น ไวท์บอร์ด, กระจก, ขาตั้งล้อเลื่อน, ไม้คอร์ก..." class="flex-1 text-sm outline-none text-slate-800 placeholder-slate-400 font-medium" />
-        <button onclick="toggleSearchModal(false)" class="text-slate-400 hover:text-slate-600 p-1"><i class="fas fa-times"></i></button>
-      </div>
-      <div id="globalSearchResults" class="max-h-96 overflow-y-auto p-4 space-y-2">
-        <!-- Live search results -->
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. USER MODAL -->
-  <div id="userModal" class="hidden fixed inset-0 z-50 modal-overlay flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 animate-fade-in border border-slate-200 relative">
-      <button onclick="toggleUserModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><i class="fas fa-times"></i></button>
-      
-      <div class="text-center mb-6">
-        <div class="w-16 h-16 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
-          <i class="fas fa-user-circle"></i>
-        </div>
-        <h3 class="text-lg font-bold text-slate-900">บัญชีผู้ใช้งาน / ติดตามสินค้า</h3>
-        <p class="text-xs text-slate-500 mt-1">เข้าสู่ระบบเพื่อดูประวัติคำสั่งซื้อและสถานะการจัดส่ง</p>
-      </div>
-
-      <div class="space-y-4">
-        <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1">เบอร์โทรศัพท์ หรือ อีเมล</label>
-          <input type="text" placeholder="เช่น 0891234567 หรือ user@example.com" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-brand-500" />
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1">รหัสผ่าน หรือ รหัสคำสั่งซื้อ (Order ID)</label>
-          <input type="password" placeholder="••••••••" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-brand-500" />
-        </div>
-        <button type="button" onclick="cartManager.showToast('เข้าสู่ระบบสำเร็จ (โหมดจำลองการทำงาน)', 'success'); toggleUserModal(false);" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-xs transition">
-          เข้าสู่ระบบ / ค้นหาสถานะ
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. QUICK VIEW / PRODUCT DETAIL MODAL -->
-  <div id="productDetailModal" class="hidden fixed inset-0 z-50 modal-overlay flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full overflow-hidden animate-fade-in border border-slate-200 relative my-8">
-      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-white/90 text-slate-500 hover:text-slate-800 rounded-full flex items-center justify-center shadow-md transition">
-        <i class="fas fa-times text-sm"></i>
-      </button>
-
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <!-- Image Box -->
-        <div class="bg-slate-100 p-6 flex items-center justify-center relative">
-          <img id="modalProductImage" src="" alt="" class="max-h-72 w-full object-cover rounded-2xl shadow-sm" />
-          <span id="modalProductBadge" class="absolute top-4 left-4 bg-amber-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-md"></span>
-        </div>
-
-        <!-- Info Box -->
-        <div class="p-6 sm:p-8 flex flex-col justify-between space-y-5">
-          <div>
-            <span id="modalProductCategory" class="text-xs font-bold text-brand-600 uppercase tracking-wider"></span>
-            <h3 id="modalProductName" class="text-lg sm:text-xl font-black text-slate-900 mt-1 leading-snug"></h3>
-            <p id="modalProductDesc" class="text-xs text-slate-500 mt-2 font-body leading-relaxed"></p>
-
-            <!-- Highlights -->
-            <ul id="modalProductHighlights" class="mt-3 space-y-1"></ul>
-
-            <!-- Size Selector -->
-            <div class="mt-4">
-              <label class="block text-xs font-bold text-slate-700 mb-2">เลือกขนาดกระดาน:</label>
-              <div id="modalSizeOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-2"></div>
-            </div>
-          </div>
-
-          <!-- Price & Add to Cart -->
-          <div class="pt-4 border-t border-slate-200">
-            <div class="flex items-baseline gap-3 mb-4">
-              <span id="modalProductPrice" class="text-2xl font-black text-brand-600">฿0</span>
-              <span id="modalProductOriginalPrice" class="text-sm text-slate-400 line-through">฿0</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <!-- Quantity Selector -->
-              <div class="flex items-center border border-slate-200 rounded-xl bg-slate-50 px-2 py-1">
-                <button onclick="changeModalQty(-1)" class="text-slate-500 hover:text-red-500 font-bold px-2 text-sm">−</button>
-                <span id="modalProductQty" class="text-xs font-bold text-slate-800 w-6 text-center">1</span>
-                <button onclick="changeModalQty(1)" class="text-slate-500 hover:text-brand-600 font-bold px-2 text-sm">+</button>
-              </div>
-
-              <!-- Add to Cart Button -->
-              <button onclick="addModalProductToCart()" class="flex-1 bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm font-bold py-3 px-4 rounded-xl shadow-lg shadow-brand-500/25 transition flex items-center justify-center gap-2">
-                <i class="fas fa-cart-plus"></i>
-                <span>เลือกสินค้าลงตะกร้า</span>
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== SCRIPTS ==================== -->
-  <script src="js/products-data.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/main.js"></script>
-  
+  <!-- Scripts -->
+  <script src="js/tourist-data.js"></script>
+  <script src="js/tourist-app.js"></script>
   <script>
-    // แสดงสินค้าแนะนำ 4 ชิ้นแรกบนหน้าแรก
     document.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('homeFeaturedProducts');
-      if (!container) return;
-
-      const featured = PRODUCTS_DATA.slice(0, 4);
-      container.innerHTML = featured.map(product => {
-        const defaultSize = product.sizes[0];
-        return `
-          <div class="product-card bg-white rounded-2xl border border-slate-200/80 overflow-hidden flex flex-col">
-            <div class="relative overflow-hidden group cursor-pointer" onclick="openProductModal('${product.id}')">
-              <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" />
-              <span class="absolute top-3 left-3 bg-amber-500 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md shadow-sm">
-                ${product.badge}
-              </span>
-            </div>
-            
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <span class="text-[11px] font-semibold text-brand-600 uppercase tracking-wider">${product.categoryName}</span>
-                <h3 class="text-sm font-bold text-slate-900 mt-1 line-clamp-2 hover:text-brand-600 cursor-pointer" onclick="openProductModal('${product.id}')">
-                  ${product.name}
-                </h3>
-                <div class="flex items-center gap-1.5 mt-2 text-amber-500 text-xs">
-                  <i class="fas fa-star"></i>
-                  <span class="font-bold text-slate-800">${product.rating}</span>
-                  <span class="text-slate-400 font-normal">(${product.reviewsCount} รีวิว)</span>
-                </div>
-                <p class="text-xs text-slate-500 font-body mt-2 line-clamp-2">${product.description}</p>
-              </div>
-
-              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
-                <div>
-                  <span class="text-[11px] text-slate-400 block">เริ่มต้น</span>
-                  <span class="text-base font-black text-brand-600">${formatPrice(defaultSize.price)}</span>
-                </div>
-                <button onclick="openProductModal('${product.id}')" class="bg-brand-50 hover:bg-brand-600 hover:text-white text-brand-700 text-xs font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5">
-                  <i class="fas fa-eye"></i> ดูขนาด/สั่งซื้อ
-                </button>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
+      initHomePage();
     });
   </script>
-
 </body>
 </html>
