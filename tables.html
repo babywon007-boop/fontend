@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ระบบจัดการฐานข้อมูล 5 ตาราง (CRUD & SQL) | บริษัท ทริป ทัวร์ เที่ยว จำกัด</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen font-body">
+
+  <!-- ==================== TOP BAR ==================== -->
+  <div class="bg-blue-950 text-white text-xs py-2 px-4 border-b border-blue-900">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="bg-blue-600 text-[10px] font-bold px-2 py-0.5 rounded tracking-wide uppercase">Admin & Database Suite</span>
+        <span class="font-medium"><i class="fas fa-database text-amber-400 mr-1.5"></i> บริษัท ทริป ทัวร์ เที่ยว จำกัด | ระบบจัดการฐานข้อมูล 5 ตาราง (CRUD & SQL)</span>
+      </div>
+      <div class="flex items-center gap-4 text-blue-200 text-[11px]">
+        <button onclick="resetDatabaseToDefault()" class="text-amber-300 hover:text-white flex items-center gap-1 font-semibold">
+          <i class="fas fa-rotate-left"></i> รีเซ็ตข้อมูลตามรูปต้นฉบับ
+        </button>
+        <span>|</span>
+        <a href="contact.html" class="hover:text-white flex items-center gap-1"><i class="fas fa-phone"></i> ติดต่อเรา</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 bg-gradient-to-tr from-blue-700 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition">
+            <i class="fas fa-plane-departure text-2xl"></i>
+          </div>
+          <div>
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 block leading-tight">
+              ทริป ทัวร์ <span class="text-blue-600">เที่ยว</span>
+            </span>
+            <span class="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wider uppercase block">
+              บริษัท ทริป ทัวร์ เที่ยว จำกัด
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-slate-600">
+          <a href="index.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            หน้าแรก
+          </a>
+          <a href="attractions.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            สถานที่ท่องเที่ยว
+          </a>
+          <a href="activities.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            กิจกรรม
+          </a>
+          <a href="hotels.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โรงแรมที่พัก
+          </a>
+          <a href="tables.html" class="nav-link active px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            จัดการฐานข้อมูล (CRUD)
+          </a>
+          <a href="about.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            โครงสร้าง ER
+          </a>
+          <a href="contact.html" class="nav-link px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50 transition">
+            ติดต่อเรา
+          </a>
+        </nav>
+
+        <!-- Right Quick Actions -->
+        <div class="flex items-center gap-2">
+          <button onclick="resetDatabaseToDefault()" class="px-3.5 py-2 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl text-xs font-bold transition flex items-center gap-1.5" title="คืนค่าข้อมูลเดิมตามรูป">
+            <i class="fas fa-arrow-rotate-left"></i>
+            <span class="hidden sm:inline">รีเซ็ตข้อมูล</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CRUD DASHBOARD ==================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1">
+    
+    <!-- Top Intro Card -->
+    <div class="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">ระบบจัดการฐานข้อมูล (Live CRUD & SQL)</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+          จัดการฐานข้อมูล 5 ตาราง บริษัท ทริป ทัวร์ เที่ยว จำกัด
+        </h1>
+        <p class="text-xs text-slate-500 mt-1">
+          เรียกดู เพิ่ม แก้ไข และลบข้อมูลทั้ง 5 ตาราง (TA1_Pv, TA1_Tv, TA1_Tourist, TA1_Activity, TA1_Hotel) พร้อมส่งออกคำสั่ง SQL Script
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="switchTab('relational')" class="px-4 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-indigo-200">
+          <i class="fas fa-diagram-project"></i> มุมมอง JOIN เชื่อมโยง 5 ตาราง
+        </button>
+        <button onclick="switchTab('sql')" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+          <i class="fas fa-code text-emerald-400"></i> โค้ด SQL Script
+        </button>
+      </div>
+    </div>
+
+    <!-- Table Selection Tabs -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-4 scrollbar-none">
+      <button onclick="switchTab('TA1_Tourist')" data-tab="TA1_Tourist" class="table-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs bg-blue-600 text-white shadow-md transition flex items-center gap-2">
+        <i class="fas fa-map-pin"></i> TA1_Tourist (สถานที่)
+      </button>
+      <button onclick="switchTab('TA1_Activity')" data-tab="TA1_Activity" class="table-tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/80 transition flex items-center gap-2">
+        <i class="fas fa-person-hiking"></i> TA1_Activity (กิจกรรม)
+      </button>
+      <button onclick="switchTab('TA1_Hotel')" data-tab="TA1_Hotel" class="table-tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/80 transition flex items-center gap-2">
+        <i class="fas fa-hotel"></i> TA1_Hotel (โรงแรม)
+      </button>
+      <button onclick="switchTab('TA1_Pv')" data-tab="TA1_Pv" class="table-tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/80 transition flex items-center gap-2">
+        <i class="fas fa-city"></i> TA1_Pv (จังหวัด)
+      </button>
+      <button onclick="switchTab('TA1_Tv')" data-tab="TA1_Tv" class="table-tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/80 transition flex items-center gap-2">
+        <i class="fas fa-car"></i> TA1_Tv (การเดินทาง)
+      </button>
+      <button onclick="switchTab('relational')" data-tab="relational" class="table-tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs bg-white hover:bg-slate-100 text-indigo-700 border border-slate-200/80 transition flex items-center gap-2">
+        <i class="fas fa-diagram-project"></i> Relational View
+      </button>
+      <button onclick="switchTab('sql')" data-tab="sql" class="table-tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs bg-white hover:bg-slate-100 text-emerald-700 border border-slate-200/80 transition flex items-center gap-2">
+        <i class="fas fa-code"></i> SQL Schema
+      </button>
+    </div>
+
+    <!-- Action Header (Search & Add Record) -->
+    <div id="table-action-header" class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm mb-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <h3 id="current-table-title" class="text-base font-bold text-slate-800 flex items-center gap-2">
+          <!-- Injected by JS -->
+        </h3>
+        <span id="table-rows-count" class="text-xs bg-slate-100 text-slate-600 font-bold px-2.5 py-1 rounded-lg">
+          0 รายการ
+        </span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <!-- Search bar inside table -->
+        <div class="relative w-48 sm:w-64">
+          <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+          <input 
+            type="text" 
+            id="table-search-input" 
+            placeholder="ค้นหาในตาราง..." 
+            class="w-full pl-8 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition"
+          />
+        </div>
+
+        <!-- Add Button -->
+        <button 
+          onclick="openAddModal()" 
+          class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-md shadow-blue-500/20">
+          <i class="fas fa-plus"></i> เพิ่มข้อมูลใหม่
+        </button>
+      </div>
+    </div>
+
+    <!-- Table Content Area -->
+    <div id="table-content-area">
+      <!-- Injected by JS -->
+    </div>
+
+  </main>
+
+  <!-- ==================== CRUD MODAL (ADD / EDIT) ==================== -->
+  <div id="crud-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl animate-modal">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <h3 id="crud-modal-title" class="text-base font-bold text-slate-900">
+          <!-- Injected by JS -->
+        </h3>
+        <button onclick="closeCrudModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="crud-modal-form" onsubmit="saveCrudForm(event)">
+        <div id="crud-modal-fields" class="space-y-4 mb-6">
+          <!-- Injected by JS -->
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+          <button type="button" onclick="closeCrudModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
+            ยกเลิก
+          </button>
+          <button type="submit" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition flex items-center gap-1.5">
+            <i class="fas fa-save"></i> บันทึกข้อมูล
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-base shadow-sm">
+          <i class="fas fa-plane-departure"></i>
+        </div>
+        <div>
+          <span class="font-bold text-slate-800 block text-sm">บริษัท ทริป ทัวร์ เที่ยว จำกัด (Trip Tour Tiew Co., Ltd.)</span>
+          <span>ระบบจัดการข้อมูลเชิงสัมพันธ์ 5 ตาราง: TA1_Pv, TA1_Tv, TA1_Tourist, TA1_Activity, TA1_Hotel</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-slate-600 font-medium">
+        <a href="index.html" class="hover:text-blue-600">หน้าแรก</a>
+        <a href="attractions.html" class="hover:text-blue-600">สถานที่เที่ยว</a>
+        <a href="activities.html" class="hover:text-blue-600">กิจกรรม</a>
+        <a href="hotels.html" class="hover:text-blue-600">โรงแรม</a>
+        <a href="about.html" class="hover:text-blue-600">ER-Diagram</a>
+        <a href="contact.html" class="hover:text-blue-600">ติดต่อเรา</a>
+        <button onclick="resetDatabaseToDefault()" class="hover:text-rose-600 font-semibold">รีเซ็ตข้อมูลเริ่มต้น</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/tourist-data.js"></script>
+  <script src="js/tables-crud.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initTablesPage();
+    });
+  </script>
+</body>
+</html>
